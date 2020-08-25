@@ -1,7 +1,11 @@
+var usuarios = window.sessionStorage;
+var usuario = document.getElementById("user").value;
+usuarios.setItem("keyUser", usuario);
 
 function validar() {
     var i = document.getElementById("user").value;
     var contenido = "";
+
     if (i == "" || i == null ) {
         contenido += `
             <p>Debe ingresa un usuario </p>
