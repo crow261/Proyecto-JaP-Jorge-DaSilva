@@ -1,8 +1,13 @@
+var miStorage = window.sessionStorage;
+var usuario;
+
 
 function validar() {
-    var i = document.getElementById("user").value;
-    var contenido = "";
-    if (i == "" || i == null ) {
+    document.getElementById("errorU").innerHTML = "";
+    document.getElementById("errorP").innerHTML = "";
+        var contenido = "";
+        usuario = document.getElementById("user").value;
+    if (usuario == "" || usuario == null ) {
         contenido += `
             <p>Debe ingresa un usuario </p>
             `
@@ -19,22 +24,20 @@ function validar() {
         document.getElementById("errorP").innerHTML = contenido2;
         return false
     }
-
+    return true;
 }
     
 
 function enviar() {
-    if (validar() == false) {
-        return validar();
-    } else {
-        return link()
+    var validado = validar();
+    if ( validado==true){
+        return link();
     }
 }
 
 function link() {
-    if (!validar()) {
-        return location.href ="index2.html"
-    }
+     miStorage.setItem("keyUser",usuario);
+    return location.href ="index2.html";
 }
 
 
