@@ -69,12 +69,25 @@ function showProductsList() {
                 </div>
                  <div class="col">
                          <div class="d-flex w-100 justify-content-between">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 1457f0ac631f8679e66341e9a625d7e5e7893a0b
                           <h3 class= "mb-1">${products.name}</h3>
                          
                          ${products.soldCount} vendidos
                          </div>
                      <p class= "mb-1">${products.description}</p>
                      <h5>${products.cost} ${products.currency}</h5>
+<<<<<<< HEAD
+=======
+=======
+                          <h4 class= "mb-1">${products.name}</h4>
+                         ${products.cost} ${products.currency}
+                         </div>
+                     <p class= "mb-1">${products.description}</p>
+>>>>>>> a44cc89c7c63df38625a6db5f048be9df4c9af9b
+>>>>>>> 1457f0ac631f8679e66341e9a625d7e5e7893a0b
                 </div>
             </div>
          </a>
@@ -105,6 +118,14 @@ function sortAndShowProducts(sortCriteria, productsArray){
 document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(PRODUCTS_URL).then(function (resultObj) {
         if (resultObj.status === "ok") {
+<<<<<<< HEAD
+                      
+           sortAndShowProducts(ORDER_ASC_BY_COST, resultObj.data);
+        }
+    });
+
+=======
+<<<<<<< HEAD
                       
            sortAndShowProducts(ORDER_ASC_BY_COST, resultObj.data);
         }
@@ -159,6 +180,67 @@ document.addEventListener("DOMContentLoaded", function (e) {
         showProductsList();
     });
 
+=======
+           /* ProductsArray = resultObj.data;*/
+           
+           sortAndShowProducts(ORDER_ASC_BY_COST, resultObj.data);
+        }
+    });
+
+>>>>>>> 1457f0ac631f8679e66341e9a625d7e5e7893a0b
+    document.getElementById("sortAsc").addEventListener("click", function(){
+        sortAndShowProducts(ORDER_ASC_BY_COST);
+    });
+
+    document.getElementById("sortDesc").addEventListener("click", function(){
+        sortAndShowProducts(ORDER_DESC_BY_COST);
+    });
+
+    document.getElementById("sortByRel").addEventListener("click", function(){
+        sortAndShowProducts(ORDER_BY_PROD_REL);
+    });
+
+    document.getElementById("clearRangeFilter").addEventListener("click", function(){
+        document.getElementById("rangeFilterCostMin").value = "";
+        document.getElementById("rangeFilterCostMax").value = "";
+
+        minCost = undefined;
+        maxCost = undefined;
+
+         showProductsList();
+          
+    });
+
+
+
+
+    document.getElementById("rangeFilterCost").addEventListener("click", function(){
+        //Obtengo el mínimo y máximo de los intervalos para filtrar por cantidad
+        //de productos por categoría.
+        minCost = document.getElementById("rangeFilterCostMin").value;
+        maxCost = document.getElementById("rangeFilterCostMax").value;
+
+        if ((minCost != undefined) && (minCost != "") && (parseInt(minCost)) >= 0){
+            minCost = parseInt(minCost);
+        }
+        else{
+            minCost = undefined;
+        }
+
+        if ((maxCost != undefined) && (maxCost != "") && (parseInt(maxCost)) >= 0){
+            maxCost = parseInt(maxCost);
+        }
+        else{
+            maxCost = undefined;
+        }
+
+        showProductsList();
+    });
+
+<<<<<<< HEAD
+=======
+>>>>>>> a44cc89c7c63df38625a6db5f048be9df4c9af9b
+>>>>>>> 1457f0ac631f8679e66341e9a625d7e5e7893a0b
 
 
 
