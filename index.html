@@ -13,13 +13,16 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   
+   
    <style>
     html,
     body {
       height: 100%;
+      background-image:
     }
 
     body {
+      background-image: url("img/login2.jpg");
       display: -ms-flexbox;
       display: flex;
       -ms-flex-align: center;
@@ -31,7 +34,7 @@
 
     .signin {
       width: 100%;
-      max-width: 330px;
+      max-width: 390px;
       padding: 15px;
       margin: auto;
     }
@@ -40,41 +43,47 @@
 </head>
 
 <body class="signin">
-  <!-- <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 1 (Fecha de entrega: 16/08/2020) -> Punto 3 y 4.</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
-  </div>-->
 
-  <form style="text-align: center">
+  <div class="container">
+    <div class="d-flex justify-content-center h-100">
+      <div class="cardlogin">
+        <div class="card-header">
+          <h3>LOGIN</h3><img src="img/login-2.png" width="100%"> </img>
+          
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <!--<span class="input-group-text"><i class="fas fa-user"></i></span> -->
+              </div>
+            <div class="container-fluid"><input type="text" class="form-control" placeholder="usuario o email" id="user"></div>
+              <div id="errorU" class="textlogin container-fluid"></div>
+              
+              
+            </div>
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+               <!-- <span class="input-group-text"><i class="fas fa-key"></i></span>-->
+              </div>
+              <div class="container-fluid"><input type="password" class="form-control" placeholder="contraseña" id="pass">
+              </div>
+              <div id="errorP" class="textlogin container-fluid"></div>
+            </div>
+            <div class="row align-items-center remember container-fluid">
+              <input type="checkbox">Recuérdame
+            </div>
+            <div class="form-group">
+              <input type="button" value="Ingresar" class="btn float-right login_btn" onclick="enviar()">
+              <br>
+            </div>
+          </form>
+        </div>        
+          </div>
+        </div>
+      </div>
+    
 
-  <img src="img/login.png" width="90%"> </img>
-
-  <h1>LOGIN</h1>
-
-  <div>
-    <h2>usuario</h2>
-  </div>
-
-  <input type="email" name="user" id="user" placeholder="Usuario o Email">
-  <div id="errorU"></div>
-
-<br>
-
-  <h2>contraseña</h2>
-
-  <input type="password" name="pass" id="pass" placeholder="Contraseña">
-  <div id="errorP"></div>
- <br>
-
-
-  <div style= align-items: center>
-    <button class="boton" type="button" id="boton" onclick="enviar()">INGRESAR</button>
-
-  </div>
 </form>
 
   <script src="js/init.js"></script>
