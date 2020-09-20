@@ -1,6 +1,10 @@
 var product = [];
+<<<<<<< HEAD
 var productList = [];
 var relatedNumber= [];
+=======
+
+>>>>>>> 911312ce4433ea3fc6e5e245d16ce91ce39116b1
 
 //1
 
@@ -9,6 +13,7 @@ function showProductImages(array) {
    let htmlContentToAppend = "";
    htmlContentToAppend += `
 
+<<<<<<< HEAD
 <div>
 <div id="carouselExampleControls" class="carousel slide d-flex justify-content-center" data-ride="carousel" >
 <div class="carousel-inner">
@@ -26,6 +31,25 @@ function showProductImages(array) {
   </div>
   <div class="carousel-item">
     <img class="d-block w-100" src="`+product.images[4]+`" alt="Third slide">
+=======
+
+<div id="carouselExampleControls" class="carousel slide d-flex justify-content-center" data-ride="carousel" >
+<div class="carousel-inner">
+  <div class="carousel-item active">
+    <img class="d-block w-50 center" src="`+product.images[0]+`" alt="First slide">
+  </div>
+  <div class="carousel-item">
+    <img class="d-block w-50 " src="`+product.images[1]+`" alt="Second slide">
+  </div>
+  <div class="carousel-item">
+    <img class="d-block w-50" src="`+product.images[2]+`" alt="Third slide">
+  </div>
+  <div class="carousel-item ">
+    <img class="d-block w-50" src="`+product.images[3]+`" alt="Third slide">
+  </div>
+  <div class="carousel-item">
+    <img class="d-block w-50" src="`+product.images[4]+`" alt="Third slide">
+>>>>>>> 911312ce4433ea3fc6e5e245d16ce91ce39116b1
   </div>
   
 </div>
@@ -38,16 +62,20 @@ function showProductImages(array) {
   <span class="sr-only">Next</span>
 </a>
 </div>
+<<<<<<< HEAD
 </div>
 
 </div>
 
+=======
+>>>>>>> 911312ce4433ea3fc6e5e245d16ce91ce39116b1
         `
 
         document.getElementById("productImagesGallery").innerHTML = htmlContentToAppend;
     }
 
 
+<<<<<<< HEAD
 
 
 
@@ -57,6 +85,8 @@ function showProductImages(array) {
 
 
 
+=======
+>>>>>>> 911312ce4433ea3fc6e5e245d16ce91ce39116b1
 //2
 
 function showProductComments(array) {
@@ -119,6 +149,7 @@ function Comentario() {
 
 
 
+<<<<<<< HEAD
 //productos relacionados
 
 function relatedProducts(array){  
@@ -141,6 +172,8 @@ document.getElementById("related").innerHTML = htmlContentToAppend;
 
 
 
+=======
+>>>>>>> 911312ce4433ea3fc6e5e245d16ce91ce39116b1
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
@@ -156,18 +189,30 @@ document.addEventListener("DOMContentLoaded", function (e) {
             let productDescriptionHTML = document.getElementById("productDescription");
             let productCosttHTML = document.getElementById("productCost");
             let productCurrencyHTML = document.getElementById("productCurrency");
+<<<<<<< HEAD
           
+=======
+
+>>>>>>> 911312ce4433ea3fc6e5e245d16ce91ce39116b1
             productNameHTML.innerHTML = product.name;
             productDescriptionHTML.innerHTML = product.description;
             productCosttHTML.innerHTML = product.cost;
             productCurrencyHTML.innerHTML = product.currency;
+<<<<<<< HEAD
             //numero de posición
             relatedNumber = product.relatedProducts;
+=======
+>>>>>>> 911312ce4433ea3fc6e5e245d16ce91ce39116b1
 
 
             //Muestro las imagenes en forma de galería
            showProductImages(product.images);
+<<<<<<< HEAD
            
+=======
+            
+
+>>>>>>> 911312ce4433ea3fc6e5e245d16ce91ce39116b1
 
 
         }
@@ -192,6 +237,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 
     });
+<<<<<<< HEAD
     
   
 
@@ -209,5 +255,10 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 
     
+=======
+
+
+
+>>>>>>> 911312ce4433ea3fc6e5e245d16ce91ce39116b1
 
 });
