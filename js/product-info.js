@@ -1,6 +1,5 @@
 var product = [];
-var productList = [];
-var relatedNumber= [];
+
 
 //1
 
@@ -9,23 +8,23 @@ function showProductImages(array) {
    let htmlContentToAppend = "";
    htmlContentToAppend += `
 
-<div>
+
 <div id="carouselExampleControls" class="carousel slide d-flex justify-content-center" data-ride="carousel" >
 <div class="carousel-inner">
   <div class="carousel-item active">
-    <img class="d-block w-100" src="`+product.images[0]+`" alt="First slide">
+    <img class="d-block w-50 center" src="`+product.images[0]+`" alt="First slide">
   </div>
   <div class="carousel-item">
-    <img class="d-block w-100" src="`+product.images[1]+`" alt="Second slide">
+    <img class="d-block w-50 " src="`+product.images[1]+`" alt="Second slide">
   </div>
   <div class="carousel-item">
-    <img class="d-block w-100" src="`+product.images[2]+`" alt="Third slide">
+    <img class="d-block w-50" src="`+product.images[2]+`" alt="Third slide">
   </div>
   <div class="carousel-item ">
-    <img class="d-block w-100" src="`+product.images[3]+`" alt="Third slide">
+    <img class="d-block w-50" src="`+product.images[3]+`" alt="Third slide">
   </div>
   <div class="carousel-item">
-    <img class="d-block w-100" src="`+product.images[4]+`" alt="Third slide">
+    <img class="d-block w-50" src="`+product.images[4]+`" alt="Third slide">
   </div>
   
 </div>
@@ -38,23 +37,10 @@ function showProductImages(array) {
   <span class="sr-only">Next</span>
 </a>
 </div>
-</div>
-
-</div>
-
         `
 
         document.getElementById("productImagesGallery").innerHTML = htmlContentToAppend;
     }
-
-
-
-
-
-
-
-
-
 
 
 //2
@@ -119,28 +105,6 @@ function Comentario() {
 
 
 
-//productos relacionados
-
-function relatedProducts(array){  
-htmlContentToAppend="";
-/*for (let k = 0; k < array; k++) {
-  let relatedNumber = array[k];*/
-for(k in array){
-  let relatedNumber = array[k];
- let prodPosition = productList[relatedNumber]
-
-htmlContentToAppend +=`
-<div class="col">`+prodPosition.name+`<img src="`+prodPosition.imgSrc+`" alt="..." class="img-thumbnail rounded" ></div> 
-`
-
-document.getElementById("related").innerHTML = htmlContentToAppend;
-}
-
-}
-
-
-
-
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
@@ -156,18 +120,17 @@ document.addEventListener("DOMContentLoaded", function (e) {
             let productDescriptionHTML = document.getElementById("productDescription");
             let productCosttHTML = document.getElementById("productCost");
             let productCurrencyHTML = document.getElementById("productCurrency");
-          
+
             productNameHTML.innerHTML = product.name;
             productDescriptionHTML.innerHTML = product.description;
             productCosttHTML.innerHTML = product.cost;
             productCurrencyHTML.innerHTML = product.currency;
-            //numero de posición
-            relatedNumber = product.relatedProducts;
 
 
             //Muestro las imagenes en forma de galería
            showProductImages(product.images);
-           
+            
+
 
 
         }
@@ -192,22 +155,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 
     });
-    
-  
-
-   getJSONData(PRODUCTS_URL).then(function(response){
-        if(response.status === "ok"){
-          productList = response.data;
-          relatedProducts(product.relatedProducts);
-
-          
-        }
-
-        });
 
 
 
-
-    
 
 });

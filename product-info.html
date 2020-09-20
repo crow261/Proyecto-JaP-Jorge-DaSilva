@@ -20,27 +20,18 @@
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="index2.html">Inicio</a>
+      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="nombreUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown button
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="my-profile.html" >Mi Perfil</a>
-          <a class="dropdown-item" href="cart.html">Mi Carrito</a>
-          <a class="dropdown-item" href="index.html" id="logout" onclick="cerrarSession()" >Cerrar Sesión</a>
-        </div>
-      </div>
+      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <a class="py-2 d-none d-md-inline-block" href="my-profile.html" id="nombreUser"></a>
     </div>
   </nav>
 
 
   <!--1-->
 
-<div class="container">
 <h2 id="productName"></h2>
 <hr class="my-3">
       <dl>
@@ -52,28 +43,16 @@
           <p>
           <span id="productCurrency"></span><span id="productCost"><span></span></span>
         </p>
-        </dd>          
-        <div class="container">
-          <div class="row">
-            <div class="col-9">
-              <div id="productImagesGallery">
-               </div>
-            </div>
-            <!--productos relacionados -->
-          <div class="col-3">
-            <p> Otros productos relacionados </p>
-            <div id="related">
-           
-            </div>
-            
-        </div>
-      </div>
-    </div>
- </div>
-</div>
+        </dd>
+      
+  <div id="productImagesGallery">
+  </div>
+
+
+
 
 <!--2-->
-<div class="container">
+
 <h3 id="productScore"></h3>
 <hr class="my-3">
       <dl>
@@ -92,17 +71,19 @@
   <div class="list-group" id="productComments">
   </div>
 
-
   
-<!-- grupal  agregar comentario-->
+<!-- grupal  -->
       
-
+          
+  
+<div class="container">
+  <div class="row">
   <div class="col-auto my-1">
     <form>
       <div class="form-group">
-        <label for="nuevoComentario"><h4> Deja tu comentario</h4></label>
+        <label for="nuevoComentario">Deja tu comentario</label>
         <textarea class="form-control" id="nuevoComentario" rows="3" ></textarea>
-      
+      </div>
 
       <label class="mr-sm-2" for="puntuar">Puntuar con <span class="fa fa-star checked"></span></label>
       <select class="custom-select mr-sm-2" id="punt">
@@ -116,13 +97,17 @@
       <div id="errorDiv"></div>
 
       <button type="button" class="btn btn-primary my-3" onclick="Comentario()">Enviar</button>
-    </div>
+
     </form>
   </div>
 </div>
 
- <!--
-   <footer class="text-muted">
+</div>
+
+
+
+
+  <footer class="text-muted">
     <div class="container">
       <p class="float-right">
         <a href="#">Volver arriba</a>
@@ -130,17 +115,7 @@
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
       <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
     </div>
-  </footer>-->
-  <div>
-  <footer class="text-muted bg-light">
-    <div class="container">
-      <p class="float-right">
-        <a href="#">Volver arriba</a>
-      </p>
-    </div>
   </footer>
-</div>
-
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
