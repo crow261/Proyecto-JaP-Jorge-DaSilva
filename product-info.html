@@ -13,27 +13,116 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <!-- Font Awesome Icon Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
+      <a class="py-2 d-none d-md-inline-block" href="index2.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="nombreUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown button
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="my-profile.html" >Mi Perfil</a>
+          <a class="dropdown-item" href="cart.html">Mi Carrito</a>
+          <a class="dropdown-item" href="index.html" id="logout" onclick="cerrarSession()" >Cerrar Sesión</a>
+        </div>
+      </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 13/09/2020) y Entrega 4 (Fecha de entrega: 20/09/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+
+  <!--1-->
+
+<div class="container">
+<h2 id="productName"></h2>
+<hr class="my-3">
+      <dl>
+        <dt>Descripción</dt>
+        <dd>
+          <p id="productDescription"></p>
+        </dd>
+        <dd>
+          <p>
+          <span id="productCurrency"></span><span id="productCost"><span></span></span>
+        </p>
+        </dd>          
+        <div class="container">
+          <div class="row">
+            <div class="col-9">
+              <div id="productImagesGallery">
+               </div>
+            </div>
+            <!--productos relacionados -->
+          <div class="col-3">
+            <p> Otros productos relacionados </p>
+            <div id="related">
+           
+            </div>
+            
+        </div>
+      </div>
     </div>
+ </div>
+</div>
+
+<!--2-->
+<div class="container">
+<h3 id="productScore"></h3>
+<hr class="my-3">
+      <dl>
+        <dd>
+          <p id="productUser"></p>
+        </dd>
+        <dd>
+          <p id="productComment "></p>
+          <p id="productDateTime"></p>
+        </dd>
+
+  <!--cantidad de comentarios-->
+        <div class="row">
+          <h4>Comentarios (<span id="commentsLength"></span>)<div class="pull-right"></div></h4>
+        </div>
+  <div class="list-group" id="productComments">
   </div>
-  <footer class="text-muted">
+
+
+  
+<!-- grupal  agregar comentario-->
+      
+
+  <div class="col-auto my-1">
+    <form>
+      <div class="form-group">
+        <label for="nuevoComentario"><h4> Deja tu comentario</h4></label>
+        <textarea class="form-control" id="nuevoComentario" rows="3" ></textarea>
+      
+
+      <label class="mr-sm-2" for="puntuar">Puntuar con <span class="fa fa-star checked"></span></label>
+      <select class="custom-select mr-sm-2" id="punt">
+        <option selected value="0">Puntua de 1 al 5</option>
+        <option value="1">1 estrella</option>
+        <option value="2">2 estrellas</option>
+        <option value="3">3 estrellas</option>
+        <option value="4">4 estrellas</option>
+        <option value="5">5 estrellas</option>
+      </select>
+      <div id="errorDiv"></div>
+
+      <button type="button" class="btn btn-primary my-3" onclick="Comentario()">Enviar</button>
+    </div>
+    </form>
+  </div>
+</div>
+
+ <!--
+   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
         <a href="#">Volver arriba</a>
@@ -41,7 +130,17 @@
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
       <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
     </div>
+  </footer>-->
+  <div>
+  <footer class="text-muted bg-light">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+    </div>
   </footer>
+</div>
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
