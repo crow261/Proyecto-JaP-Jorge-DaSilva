@@ -36,22 +36,135 @@
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
+      <a class="py-2 d-none d-md-inline-block" href="index2.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a class="py-2 d-none d-md-inline-block" href="my-profile.html" id="nombreUser"></a>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="nombreUser" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Dropdown button
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="my-profile.html">Mi Perfil</a>
+          <a class="dropdown-item" href="cart.html">Mi Carrito</a>
+          <a class="dropdown-item" href="index.html" id="logout" onclick="cerrarSession()">Cerrar Sesión</a>
+        </div>
+      </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 7 (Fecha de entrega: 8/11/202020) -> Punto 1 y 2.</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <main role="main" class="pb-5">
+    <div class="text-center p-4">
+      <h2>Mi Perfil</h2>
+      <p class="lead">Aquí guarda y modifica tus datos de usuario.</p>
     </div>
+    <div class="container">
+      <div class="row">
+
+      </div>
+      <div class="row">
+        <div class="list-group" id="cat-list-container">
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- body -->
+
+  <div class="container">
+    <hr>
+    <div class="row">
+      <!-- formulario -->
+      <div class="col-6">
+        <form class="form">
+          <div class="form-group">
+            <label for="nombreperfil">Nombres:</label>
+            <input type="text" class="form-control inputrequiered" placeholder="ingrese su nombre/s" id="nombreperfil"
+              value="" requiered disabled>
+          </div>
+          <div class="form-group">
+            <label for="apellidosperfil">Apellidos(requerido):</label>
+            <input type="text" class="form-control inputrequiered" placeholder="ingrese su apellido/s"
+              id="apellidosperfil" value="" disabled>
+          </div>
+          <div class="form-group">
+            <label for="edadperfil">Edad:</label>
+            <input type="text" class="form-control" placeholder="ingrese su edad" id="edadperfil" value=""  maxlength="2" pattern="[0-9]" min="18" max="99" 
+              disabled>
+          </div>
+          <div class="form-group">
+            <label for="emailperfil">Email(requerido):</label>
+            <input type="email" class="form-control inputrequiered" placeholder="mi-email@ejemplo.com" id="emailperfil"
+              value="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" disabled>
+          </div>
+          <div class="form-group">
+            <label for="telefonoperfil">Teléfono:</label>
+            <input type="number" class="form-control" placeholder="ingrese su telefono/movil" id="telefonoperfil"
+              value="" disabled>
+              
+          </div>
+        </form>
+        <div class="row">
+          <div class="col text-center">
+            <p style="color: green; font-weight: bold;">*Campos en Verde son Requeridos</p>
+          </div>
+        </div>
+         <!-- Boton habilitar campos -->
+        <div class="row">
+          <div class="col">
+            <button type="button  btn-lg" class="btn btn-primary" onclick="habilitarCambios()">Modificar Datos</button>
+          </div>
+          <div class="col">
+            <!-- Boton  modal y validacion de campos-->
+            <button type="button  btn-lg" class="btn btn-success" onclick="completarMoficicacion()">
+              Guardar Cambios
+            </button>
+          </div>
+          <!-- boton para probar borrar storage
+            <button type="button" onclick="borrarPerfil()">borrar</button>-->
+          <!-- Modal-->
+          <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="">Confirmación</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Estás seguro que quieres modificar tus datos personales?
+                </div>
+                <!--botones de confirmar o no -->
+                <div class="modal-footer ">
+                  <button type="button" class="btn btn-danger text-center" data-dismiss="modal">Volver Atrás</button>
+                  <button type="button" class="btn btn-success text-center" onclick="guardarPerfil()"
+                    data-dismiss="modal">Si, estoy
+                    Seguro</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--campos de mensajes -->
+        <div class="row py-3">
+          <div class="text-danger h3 text-center" id="errorcamposvacios"></div>
+          <div class="text-success h3 text-center" id="mensajeconfirmacion"></div>
+        </div>
+      </div>
+
+      <!-- imagen lateral-->
+      <div class="col-6">
+        <div class="col text-center">
+          <img src="img/personal.png" class="img-fluid" alt="">
+        </div>
+      </div>
+
+
+
+    </div>
+    <hr>
   </div>
+  <!-- foot -->
   <footer class="text-muted bg-light">
     <div class="container">
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>

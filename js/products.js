@@ -61,8 +61,8 @@ function showProductsList() {
         if (((minCost == undefined) || (minCost != undefined && parseInt(products.cost) >= minCost))&&
             ((maxCost == undefined) || (maxCost != undefined && parseInt(products.cost) <= maxCost))){
 
-            htmlContentToAppend += `
-        <a href="category-info.html" class="list-group-item list-group-item-action">
+         /*   htmlContentToAppend += `
+        <a href="product-info.html" class="list-group-item list-group-item-action">
             <div class= "row">
                 <div class= "col-3">
                     <img src= ${products.imgSrc} + ${products.description} + class="img-thumbnail">
@@ -78,7 +78,33 @@ function showProductsList() {
                 </div>
             </div>
          </a>
-        `
+         
+        ` */
+        htmlContentToAppend += `
+        <div  class=" col-md-6 card mb-4 shadow-sm ">
+        <a href="product-info.html" class="list-group-item list-group-item-action">
+        <img src= ${products.imgSrc} class="img-thumbnail rounded-pill border-dark"></a>
+        <div class="col align-self-center">
+        <h5 class="font-weight-bold text-center">${products.name}</h5>
+        </div>
+            <div class="card-body">            
+              <p class="card-text">${products.description}</p>
+              <div class="d-flex  align-items-center">
+                <div class="col-6 align-self-start">
+                <h5 class="font-weight-bold text-left">
+                ${products.currency}
+                ${products.cost}
+                </h5>
+                </div>
+                <div class="col-6 align-self-end">
+                <p class="text-muted align-items-end text-center">${products.soldCount} vendidos</p>
+                </div>
+              </div>
+            </div>
+          </div>
+         
+
+          `
         }
         document.getElementById("cat-list-container").innerHTML = htmlContentToAppend;
     }

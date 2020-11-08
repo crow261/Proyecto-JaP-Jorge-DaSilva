@@ -52,6 +52,17 @@ function mostrarUsuario(){
 }
 
 
+
+/*  document.getElementById("logout").addEventListener("click",function(f){
+    window.sessionStorage.clear(); 
+});*/
+
+
+function cerrarSession(){
+window.sessionStorage.clear(); 
+}
+
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.

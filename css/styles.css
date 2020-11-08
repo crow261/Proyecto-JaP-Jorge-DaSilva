@@ -251,4 +251,36 @@ color: white;
 margin-left: 4px;
 }
 
-*/
+//
+
+hr{
+  border-top: 1px solid #000 !important;
+}
+
+.row{
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.comment{
+  margin-right: 20px;
+  margin-left: 20px; 
+  margin-bottom: 30px;
+}
+
+.head{
+  margin-bottom: 10px;
+}
+
+.user{
+  margin-right: 10px;
+}
+
+.checked {
+  color: orange;
+}
+
+.inputrequiered{
+  border: 2px solid green;
+  border-radius: 4px;
+}
